@@ -1,5 +1,5 @@
 PKG_NAME := bashdb
-URL := https://downloads.sourceforge.net/project/bashdb/bashdb/4.2-0.92/bashdb-4.4-0.92.tar.gz
+URL := https://sourceforge.net/projects/bashdb/files/bashdb/4.4-0.93/bashdb-4.4-0.93.tar.bz2
 
 
 include ../common/Makefile.common
