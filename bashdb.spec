@@ -4,7 +4,7 @@
 #
 Name     : bashdb
 Version  : 4.4.0.94
-Release  : 5
+Release  : 6
 URL      : https://sourceforge.net/projects/bashdb/files/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.bz2
 Source0  : https://sourceforge.net/projects/bashdb/files/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.bz2
 Summary  : No detailed summary available
@@ -55,9 +55,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503656475
+export SOURCE_DATE_EPOCH=1526002206
 %configure --disable-static
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %check
 export LANG=C
@@ -67,7 +67,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1503656475
+export SOURCE_DATE_EPOCH=1526002206
 rm -rf %{buildroot}
 %make_install
 
@@ -197,6 +197,7 @@ rm -rf %{buildroot}
 /usr/share/bashdb/init/require.sh
 /usr/share/bashdb/init/term-background.sh
 /usr/share/bashdb/init/vars.sh
+/usr/share/bashdb/lib/__pycache__/term-highlight.cpython-36.pyc
 /usr/share/bashdb/lib/action.sh
 /usr/share/bashdb/lib/alias.sh
 /usr/share/bashdb/lib/break.sh
