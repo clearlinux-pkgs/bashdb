@@ -4,7 +4,7 @@
 #
 Name     : bashdb
 Version  : 4.4.0.94
-Release  : 6
+Release  : 7
 URL      : https://sourceforge.net/projects/bashdb/files/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.bz2
 Source0  : https://sourceforge.net/projects/bashdb/files/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.bz2
 Summary  : No detailed summary available
@@ -12,7 +12,8 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: bashdb-bin
 Requires: bashdb-data
-Requires: bashdb-doc
+Requires: bashdb-license
+Requires: bashdb-man
 BuildRequires : grep
 BuildRequires : sed
 
@@ -26,6 +27,8 @@ and, more generally, GNU debugger *gdb*.
 Summary: bin components for the bashdb package.
 Group: Binaries
 Requires: bashdb-data
+Requires: bashdb-license
+Requires: bashdb-man
 
 %description bin
 bin components for the bashdb package.
@@ -42,9 +45,26 @@ data components for the bashdb package.
 %package doc
 Summary: doc components for the bashdb package.
 Group: Documentation
+Requires: bashdb-man
 
 %description doc
 doc components for the bashdb package.
+
+
+%package license
+Summary: license components for the bashdb package.
+Group: Default
+
+%description license
+license components for the bashdb package.
+
+
+%package man
+Summary: man components for the bashdb package.
+Group: Default
+
+%description man
+man components for the bashdb package.
 
 
 %prep
@@ -55,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526002206
+export SOURCE_DATE_EPOCH=1535458190
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -67,8 +87,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1526002206
+export SOURCE_DATE_EPOCH=1535458190
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/bashdb
+cp COPYING %{buildroot}/usr/share/doc/bashdb/COPYING
+cp command/show_sub/copying.sh %{buildroot}/usr/share/doc/bashdb/command_show_sub_copying.sh
 %make_install
 
 %files
@@ -197,7 +220,6 @@ rm -rf %{buildroot}
 /usr/share/bashdb/init/require.sh
 /usr/share/bashdb/init/term-background.sh
 /usr/share/bashdb/init/vars.sh
-/usr/share/bashdb/lib/__pycache__/term-highlight.cpython-36.pyc
 /usr/share/bashdb/lib/action.sh
 /usr/share/bashdb/lib/alias.sh
 /usr/share/bashdb/lib/break.sh
@@ -231,6 +253,14 @@ rm -rf %{buildroot}
 /usr/share/bashdb/lib/validate.sh
 
 %files doc
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
+%doc /usr/share/doc/bashdb/*
 %doc /usr/share/info/*
-%doc /usr/share/man/man1/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/bashdb/COPYING
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/bashdb.1
