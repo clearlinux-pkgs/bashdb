@@ -4,7 +4,7 @@
 #
 Name     : bashdb
 Version  : 4.4.1.0.1
-Release  : 9
+Release  : 10
 URL      : https://sourceforge.net/projects/bashdb/files/bashdb/4.4-1.0.1/bashdb-4.4-1.0.1.tar.gz
 Source0  : https://sourceforge.net/projects/bashdb/files/bashdb/4.4-1.0.1/bashdb-4.4-1.0.1.tar.gz
 Summary  : No detailed summary available
