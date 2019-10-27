@@ -1,11 +1,57 @@
+2019-09-03  rocky <rocky@gnu.org>
+
+	* NEWS.md, configure.ac: Get ready for release 5.0-1.1.0
+
+2019-09-02  rocky <rocky@gnu.org>
+
+	* lib/filecache.sh: readarray -> mapfile
+
+2019-09-01  rocky <rocky@gnu.org>
+
+	* init/io.sh, lib/unescape.sh: Small changes
+
+2019-09-01  rocky <rocky@gnu.org>
+
+	* .gitignore, Makefile.am, bashdb-trace.in, bashdb.in,
+	builtin/.gitignore, builtin/Makefile.am, builtin/readc.c,
+	builtin/set0.c, configure.ac, init/opts.sh,
+	init/term-background.sh, init/vars.sh, test/data/Makefile.am,
+	test/data/brkpt2.right, test/data/bug-break.right,
+	test/data/bug-source.right, test/data/interrupt.right,
+	test/data/sig-50.cmd, test/data/sig-50.right,
+	test/data/sig-Darwin.right, test/data/tbreak.right,
+	test/data/watch1.right, test/integration/test-sig.in: Update for
+	bash 5.0 Tests pass now. Now uses BASH_ARGV0.  Possibly there will be more updates.
+
+2019-09-01  rocky <rocky@gnu.org>
+
+	* : commit d56eeb788947af909da9265d4a70034163e8bbdc Author: rocky
+	<rocky@gnu.org> Date:   Sun Mar 17 22:34:35 2019 -0400
+
+2018-11-18  rocky <rocky@gnu.org>
+
+	* : commit 2d1a6083fb6619fd0f5227fa9e4961033842876b Author: rocky
+	<rocky@gnu.org> Date:   Sun Nov 18 07:05:30 2018 -0500
+
+2018-11-17  rocky <rocky@gnu.org>
+
+	* : commit b3cc8441efff71d0c163eb4cc0473bdf7ff02b0e Author: rocky
+	<rocky@gnu.org> Date:   Sat Nov 17 04:00:41 2018 -0500
+
 2018-11-17  rocky <rocky@gnu.org>
 
 	* ChangeLog, NEWS: Get ready for release 4.4-1.0.1
 
 2018-11-15  rocky <rocky@gnu.org>
 
-	* ChangeLog, configure.ac, init/opts.sh: print -> printf and a typo.
-	Bug #53
+	* : commit 1dbe1159ea5de9175cf401ae318e7e1b5e12c394 Author: rocky
+	<rocky@gnu.org> Date:   Thu Nov 15 16:30:21 2018 -0500
+
+2018-11-14  rocky <rocky@gnu.org>
+
+	* ChangeLog, test/data/Makefile.am, test/example/Makefile.am,
+	test/integration/Makefile.am: Add more of the test files in tarball
+	see #52
 
 2018-11-14  rocky <rocky@gnu.org>
 
@@ -17,6 +63,15 @@
 
 	* ChangeLog, lib/hook.sh: Preserve BASH_REMATCH - adapted from
 	Micheal Wood, Bug #56
+
+2018-11-04  rocky <rocky@gnu.org>
+
+	* ChangeLog, lib/hook.sh: Preserve BASH_REMATCH - adapted from
+	Micheal Wood, Bug #56
+
+2018-10-27  rocky <rocky@gnu.org>
+
+	* ChangeLog, NEWS, configure.ac: Get ready for release 4.4-1.0.0
 
 2018-09-30  rocky <rocky@gnu.org>
 
