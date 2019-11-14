@@ -4,14 +4,15 @@
 #
 Name     : bashdb
 Version  : 5.0.1.1.0
-Release  : 11
+Release  : 12
 URL      : https://sourceforge.net/projects/bashdb/files/bashdb/5.0-1.1.1/bashdb-5.0-1.1.0.tar.gz
 Source0  : https://sourceforge.net/projects/bashdb/files/bashdb/5.0-1.1.1/bashdb-5.0-1.1.0.tar.gz
-Summary  : A debugger for Bash scripts loosely modeled on the gdb command syntax
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: bashdb-bin = %{version}-%{release}
 Requires: bashdb-data = %{version}-%{release}
+Requires: bashdb-info = %{version}-%{release}
 Requires: bashdb-license = %{version}-%{release}
 Requires: bashdb-man = %{version}-%{release}
 BuildRequires : grep
@@ -42,13 +43,12 @@ Group: Data
 data components for the bashdb package.
 
 
-%package doc
-Summary: doc components for the bashdb package.
-Group: Documentation
-Requires: bashdb-man = %{version}-%{release}
+%package info
+Summary: info components for the bashdb package.
+Group: Default
 
-%description doc
-doc components for the bashdb package.
+%description info
+info components for the bashdb package.
 
 
 %package license
@@ -69,14 +69,14 @@ man components for the bashdb package.
 
 %prep
 %setup -q -n bashdb-5.0-1.1.0
+cd %{_builddir}/bashdb-5.0-1.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572183422
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1573775830
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -96,7 +96,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1572183422
+export SOURCE_DATE_EPOCH=1573775830
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/bashdb
 cp %{_builddir}/bashdb-5.0-1.1.0/COPYING %{buildroot}/usr/share/package-licenses/bashdb/74a8a6531a42e124df07ab5599aad63870fa0bd4
@@ -262,9 +262,9 @@ cp %{_builddir}/bashdb-5.0-1.1.0/command/show_sub/copying.sh %{buildroot}/usr/sh
 /usr/share/bashdb/lib/unescape.sh
 /usr/share/bashdb/lib/validate.sh
 
-%files doc
+%files info
 %defattr(0644,root,root,0755)
-%doc /usr/share/info/*
+/usr/share/info/bashdb.info
 
 %files license
 %defattr(0644,root,root,0755)
