@@ -1,3 +1,39 @@
+2019-09-10  rocky <rocky@gnu.org>
+
+	* NEWS.md, configure.ac: Get ready for release 5.0-1.1.1
+
+2019-09-10  rocky <rocky@gnu.org>
+
+	* doc/README.md, doc/bashdb.texi: Get ready for release 5.0-1.1.1
+
+2019-09-05  rocky <rocky@gnu.org>
+
+	* command/condition.sh, command/history.sh,
+	command/info_sub/variables.sh: Small fixes * Document "condition" better * Show history before running it * Document "info variables" better. Remove markdown bug.
+
+2019-09-05  rocky <rocky@gnu.org>
+
+	* doc/README.md: Update download info
+
+2019-09-04  rocky <rocky@gnu.org>
+
+	* command/info_sub/variables.sh, configure.ac,
+	test/unit/.gitignore, test/unit/test-alias.sh.in,
+	test/unit/test-bashdb-trace.sh.in,
+	test/unit/test-cmd-complete.sh.in, test/unit/test-cmd-eval.sh.in,
+	test/unit/test-cmd-info-variables.sh.in,
+	test/unit/test-columns.sh.in, test/unit/test-eval.sh.in,
+	test/unit/test-file.sh.in, test/unit/test-filecache.sh.in,
+	test/unit/test-fns.sh.in, test/unit/test-frame.sh.in,
+	test/unit/test-lib-eval.sh.in, test/unit/test-sort.sh.in,
+	test/unit/test-validate.sh.in: Add -x, -r, -i flags to info show
+	var...  and add test.  Fix small typos in comments
+
+2019-09-04  rocky <rocky@gnu.org>
+
+	* command/info_sub/variables.sh: Properly filter _Dbg_ variables out
+	of "info var"
+
 2019-09-03  rocky <rocky@gnu.org>
 
 	* NEWS.md, configure.ac: Get ready for release 5.0-1.1.0
