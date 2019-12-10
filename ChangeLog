@@ -1,3 +1,149 @@
+2019-12-10  rocky <rocky@gnu.org>
+
+	* test/example/Makefile.am: Add new bash-rematch test
+
+2019-12-10  rocky <rocky@gnu.org>
+
+	* configure.ac, test/unit/test-set0.sh.in: Remove set0 test
+
+2019-12-10  rocky <rocky@gnu.org>
+
+	* NEWS.md, configure.ac: Get ready for release 5.0-1.1.12
+
+2019-12-05  rocky <rocky@gnu.org>
+
+	* lib/term-highlight.py: Get all Pygments style a user has installed
+	not just builtins ...  Thanks are due to John Purnell. See
+	https://sourceforge.net/p/bashdb/tickets/4/
+
+2019-11-28  rocky <rocky@gnu.org>
+
+	* command/show_sub/annotate.sh, command/show_sub/autoeval.sh,
+	command/show_sub/autolist.sh, command/show_sub/basename.sh,
+	command/show_sub/different.sh, command/show_sub/width.sh,
+	test/data/action.right, test/data/delete.right,
+	test/data/info-args.right, test/data/misc-output-50.right,
+	test/data/setshow.right, test/unit/test-fns.sh.in: Misc small "show"
+	subcommand bugfixes an tweaks
+
+2019-11-08  rocky <rocky@gnu.org>
+
+	* init/term-background.sh: Silence "stty echo" failures
+
+2019-11-08  rocky <rocky@gnu.org>
+
+	* : Merge /nosenet/muffin-src/external-vcs/sourceforge/bashdb into
+	bash-5.0
+
+2019-11-06  rocky <rocky@gnu.org>
+
+	* command/kill.sh: Add ! suffix to "kill" command
+
+2019-11-06  rocky <rocky@gnu.org>
+
+	* command/debug.sh: "debug" doc tweak
+
+2019-11-06  rocky <rocky@gnu.org>
+
+	* lib/save-restore.sh, test/data/bug-args.cmd,
+	test/data/bug-args.right, test/example/bug-args.sh.in: Track $0 when
+	it changes inside debugged progam.
+
+2019-11-05  rocky <rocky@gnu.org>
+
+	* bashdb.in, command/eval.sh, command/shell.sh,
+	test/data/action.cmd, test/data/action.right: Set $0 in 'eval' and
+	'shell' commands
+
+2019-11-05  rocky <rocky@gnu.org>
+
+	* command/backtrace.sh, command/skip.sh: Small doc tweaks
+
+2019-10-19  rocky <rocky@gnu.org>
+
+	* doc/bashdb.texi: Add "debug" session example
+
+2019-10-16  rocky <rocky@gnu.org>
+
+	* configure.ac, dbg-set-d-vars.inc, lib/hook.sh,
+	test/data/bash-rematch.cmd, test/data/bash-rematch.right: Set
+	BASH_REMATCH in eval
+
+2019-10-15  rocky <rocky@gnu.org>
+
+	* lib/hook.sh, test/data/bash-rematch.right,
+	test/example/bash-rematch.sh: More BASH_REMATCH fixes We need to save the args as they were at the time of the
+	BASH_REMATCH command, not as it might be subsequent times it needs
+	to be checked.  It is possible the debugger sets BASH_REMATCH on its own when it
+	should be empty. So check for that as well.
+
+2019-10-14  rocky <rocky@gnu.org>
+
+	* lib/hook.sh: Better BASH_REMATCH save/restore...  restore $1, $2, etc.
+
+2019-10-14  rocky <rocky@gnu.org>
+
+	* lib/hook.sh: BASH_REMATCH save/restore hacking...  Determine seting based on BASH_REMATCH value rather than a regexp on
+	the last bash command. This is flaky, but less so.
+
+2019-10-14  rocky <rocky@gnu.org>
+
+	* lib/hook.sh: Typo in setting _Dbg_continue_rc...  but not sure this really changes the behavior of anything.
+
+2019-10-10  rocky <rocky@gnu.org>
+
+	* test/data/bash-rematch.cmd, test/data/bash-rematch.right: A More
+	stringent BASH_REMATCH test
+
+2019-10-10  rocky <rocky@gnu.org>
+
+	* configure.ac, test/data/.gitignore, test/data/Makefile.am,
+	test/data/bash-rematch.cmd, test/data/bash-rematch.right,
+	test/example/bash-rematch.sh, test/integration/.gitignore,
+	test/integration/Makefile.am, test/integration/test-bash-rematch.in: 
+	Add BASH_REMATCH integration test
+
+2019-10-10  rocky <rocky@gnu.org>
+
+	* lib/term-highlight.py, test/data/bug-loc.right: Keep up with
+	pygmentize ...  Using defaults will be less work in the end.  Fixes
+	https://sourceforge.net/p/bashdb/bugs/64/
+
+2019-10-08  rocky <rocky@gnu.org>
+
+	* test/integration/README.md: Spelling mistakes
+
+2019-10-08  rocky <rocky@gnu.org>
+
+	* test/integration/Makefile.am, test/integration/README,
+	test/integration/README.md: More detailed info on integration tests
+
+2019-10-07  rocky <rocky@gnu.org>
+
+	* test/example/interrupt.sh.in: Simpiler test-interrup looping.  Thanks to Alastair Smith
+
+2019-10-03  rocky <rocky@gnu.org>
+
+	* lib/hook.sh: Save/restore BASH_REMATCH more reliably Fixes https://sourceforge.net/p/bashdb/bugs/62/
+
+2019-10-03  rocky <rocky@gnu.org>
+
+	* configure.ac, doc/how-to-make-a-release.md, lib/fns.sh: Wasn't
+	substituting @DBG_MAIN@
+
+2019-09-11  rocky <rocky@gnu.org>
+
+	* test/data/Makefile.am, test/data/misc-output-50.right,
+	test/integration/test-misc.in: Update integration test
+
+2019-09-11  rocky <rocky@gnu.org>
+
+	* command/load.sh: Update "load" doc.
+
+2019-09-10  rocky <rocky@gnu.org>
+
+	* doc/README.md: Update README.md
+
 2019-09-10  rocky <rocky@gnu.org>
 
 	* NEWS.md, configure.ac: Get ready for release 5.0-1.1.1
