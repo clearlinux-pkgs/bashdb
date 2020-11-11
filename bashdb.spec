@@ -4,10 +4,10 @@
 #
 Name     : bashdb
 Version  : 5.0.1.1.2
-Release  : 14
+Release  : 15
 URL      : https://sourceforge.net/projects/bashdb/files/bashdb/5.0-1.1.2/bashdb-5.0-1.1.2.tar.gz
 Source0  : https://sourceforge.net/projects/bashdb/files/bashdb/5.0-1.1.2/bashdb-5.0-1.1.2.tar.gz
-Summary  : A debugger for Bash scripts loosely modeled on the gdb command syntax
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: bashdb-bin = %{version}-%{release}
@@ -75,15 +75,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575994195
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1605120258
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -93,10 +92,10 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check || :
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1575994195
+export SOURCE_DATE_EPOCH=1605120258
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/bashdb
 cp %{_builddir}/bashdb-5.0-1.1.2/COPYING %{buildroot}/usr/share/package-licenses/bashdb/74a8a6531a42e124df07ab5599aad63870fa0bd4
